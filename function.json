@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessages",
+      "direction": "in",
+      "eventHubName": "samples-workitems",
+      "connection": "IoTHubNico001_events_IOTHUB",
+      "cardinality": "many",
+      "consumerGroup": "$Default"
+    },
+    {
+      "type": "eventHub",
+      "name": "outputEventHubMessage",
+      "connection": "EventHubOutput001_RootManageSharedAccessKey_EVENTHUB",
+      "eventHubName": "eventhubnico001",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
