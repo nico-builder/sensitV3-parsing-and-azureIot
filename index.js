@@ -36,12 +36,9 @@ module.exports = function (context, IoTHubMessages) {
         var obj = new Object();
         // date manipulation
         var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'T';
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()+'Z';
-        var dateTime = date+time;
 
         obj.deviceId = message.device;
-        obj.time = dateTime;
+        obj.time = today.toISOString();
         obj.temperature = temperature;
         obj.humidity = humidity;
         obj.battery = battery;
@@ -56,7 +53,3 @@ module.exports = function (context, IoTHubMessages) {
 
     context.done();
 };
-
-
-
-    
